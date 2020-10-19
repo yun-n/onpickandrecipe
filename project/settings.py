@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'onpick',
     'recipe',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
