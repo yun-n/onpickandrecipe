@@ -28,5 +28,7 @@ router.register('life', views.LifeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('project/', include(router.urls)),
-]
+    path('recipe/', include(router.urls)),
+    path("onpick/", include("onpick.urls")),
+        ]
+
