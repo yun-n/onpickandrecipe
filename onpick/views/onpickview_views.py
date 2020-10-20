@@ -1,7 +1,4 @@
 from rest_framework import viewsets,  generics
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-# from rest_framework.decorators import api_view
 from onpick.models import OnpickYoutube, Category
 from onpick.serializers import onpickview_serializers
 from django.shortcuts import get_object_or_404
