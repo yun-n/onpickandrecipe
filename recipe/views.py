@@ -19,7 +19,7 @@ class FoodViewSet(viewsets.ModelViewSet):
 
 class FoodCommentViewSet(viewsets.ModelViewSet):
     queryset = FoodComment.objects.all()
-    serializer_Class = FoodCommentSerializer
+    serializer_class = FoodCommentSerializer
 
 #<---------------------------------------------->
 
@@ -29,7 +29,7 @@ class StyleViewSet(viewsets.ModelViewSet):
 
 class StyleCommentViewSet(viewsets.ModelViewSet):
     queryset = StyleComment.objects.all()
-    serializer_Class = StyleCommentSerializer
+    serializer_class = StyleCommentSerializer
 
 #<---------------------------------------------->
 
@@ -39,7 +39,7 @@ class DietViewSet(viewsets.ModelViewSet):
 
 class DietCommentViewSet(viewsets.ModelViewSet):
     queryset = DietComment.objects.all()
-    serializer_Class = DietCommentSerializer
+    serializer_class = DietCommentSerializer
 
 #<---------------------------------------------->
 
@@ -49,7 +49,7 @@ class PetViewSet(viewsets.ModelViewSet):
 
 class PetCommentViewSet(viewsets.ModelViewSet):
     queryset = PetComment.objects.all()
-    serializer_Class = PetCommentSerializer
+    serializer_class = PetCommentSerializer
 
 #<---------------------------------------------->
 
@@ -59,7 +59,7 @@ class LifeViewSet(viewsets.ModelViewSet):
 
 class LifeCommentViewSet(viewsets.ModelViewSet):
     queryset = LifeComment.objects.all()
-    serializer_Class = LifeCommentSerializer
+    serializer_class = LifeCommentSerializer
 
 #<---------------------------------------------->
 

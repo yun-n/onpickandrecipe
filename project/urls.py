@@ -29,11 +29,21 @@ router.register('life', views.LifeViewSet)
 
 routers = routers.SimpleRouter()
 routers.register('trendcomment', views.TrendCommentViewSet)
+routers.register('foodcomment', views.FoodCommentViewSet)
+routers.register('stylecomment', views.StyleCommentViewSet)
+routers.register('dietcomment', views.DietCommentViewSet)
+routers.register('petcomment', views.PetCommentViewSet)
+routers.register('lifecomment', views.LifeCommentViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipe/', include(router.urls)),
     path('recipe/trend/<int:pk>/', include(routers.urls)),
+    path('recipe/food/<int:pk>/', include(routers.urls)),
+    path('recipe/style/<int:pk>/', include(routers.urls)),
+    path('recipe/diet/<int:pk>/', include(routers.urls)),
+    path('recipe/pet/<int:pk>/', include(routers.urls)),
+    path('recipe/life/<int:pk>/', include(routers.urls)),
     path("onpick/", include("onpick.urls")),
         ]
 

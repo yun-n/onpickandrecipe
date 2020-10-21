@@ -26,7 +26,7 @@ class FoodCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FoodComment
-        fields = ('recipe', 'user', 'comment', 'created_at','reply')
+        fields = '__all__'
 
 #<------------------------------------------------------------>
 
@@ -40,7 +40,7 @@ class StyleCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = StyleComment
-        fields = ('recipe', 'user', 'comment', 'created_at','reply')
+        fields = '__all__'
 
 #<------------------------------------------------------------> 
 
@@ -54,7 +54,7 @@ class DietCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DietComment
-        fields = ('recipe', 'user', 'comment', 'created_at','reply')
+        fields = '__all__'
 
 #<------------------------------------------------------------>
 
@@ -68,7 +68,7 @@ class PetCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PetComment
-        fields = ('recipe', 'user', 'comment', 'created_at','reply')
+        fields = '__all__'
 
 #<------------------------------------------------------------>
 
@@ -82,7 +82,7 @@ class LifeCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = LifeComment
-        fields = ('recipe', 'user', 'comment', 'created_at','reply')
+        fields = '__all__'
 
 
    
