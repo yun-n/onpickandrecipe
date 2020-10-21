@@ -45,3 +45,46 @@ class Life(models.Model):
     life_content = models.CharField(max_length=500, null=True)
     life_video = models.FileField()
     ip = models.ForeignKey('ip', on_delete=models.CASCADE, null=True)
+
+#<------------------------------------------->
+
+class TrendComment(models.Model):
+    recipe = models.ForeignKey('Trend', related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    
+
+class FoodComment(models.Model):
+    recipe = models.ForeignKey(Food, related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='reply', on_delete=models.CASCADE, null=True, blank=True)
+    comment = models.CharField(max_length=100,null=True)
+    created_at = models.DateTimeField('생성시간', auto_now_add=True,null=True)
+
+class StyleComment(models.Model):
+    recipe = models.ForeignKey(Style, related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='reply', on_delete=models.CASCADE, null=True, blank=True)
+    comment = models.CharField(max_length=100,null=True)
+    created_at = models.DateTimeField('생성시간', auto_now_add=True,null=True)
+
+class DietComment(models.Model):
+    recipe = models.ForeignKey(Diet, related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='reply', on_delete=models.CASCADE, null=True, blank=True)
+    comment = models.CharField(max_length=100,null=True)
+    created_at = models.DateTimeField('생성시간', auto_now_add=True,null=True)
+
+class PetComment(models.Model):
+    recipe = models.ForeignKey(Pet, related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='reply', on_delete=models.CASCADE, null=True, blank=True)
+    comment = models.CharField(max_length=100,null=True)
+    created_at = models.DateTimeField('생성시간', auto_now_add=True,null=True) 
+
+class LifeComment(models.Model):
+    recipe = models.ForeignKey(Life, related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='reply', on_delete=models.CASCADE, null=True, blank=True)
+    comment = models.CharField(max_length=100,null=True)
+    created_at = models.DateTimeField('생성시간', auto_now_add=True,null=True)   

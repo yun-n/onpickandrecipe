@@ -26,9 +26,14 @@ router.register('diet', views.DietViewSet)
 router.register('pet', views.PetViewSet)
 router.register('life', views.LifeViewSet)
 
+
+routers = routers.SimpleRouter()
+routers.register('trendcomment', views.TrendCommentViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipe/', include(router.urls)),
+    path('recipe/trend/<int:pk>/', include(routers.urls)),
     path("onpick/", include("onpick.urls")),
         ]
 

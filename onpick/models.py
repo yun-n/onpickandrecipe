@@ -18,3 +18,17 @@ class OnpickYoutube(models.Model):
 
     def __str__(self):
         return self.onpick_title
+
+class Comment(models.Model):
+    onpick = models.ForeignKey(OnpickYoutube, related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    parent = models.ForeignKey('self', related_name='reply', on_delete=models.CASCADE, null=True, blank=True)
+    comment = models.CharField(max_length=100,null=True)
+    created_at = models.DateTimeField('생성시간', auto_now_add=True,null=True)
+
+   
+
+
+
+
+
