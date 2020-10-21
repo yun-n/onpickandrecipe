@@ -49,7 +49,8 @@ class Life(models.Model):
 #<------------------------------------------->
 
 class TrendComment(models.Model):
-    recipe = models.ForeignKey('Trend', related_name='comments', on_delete=models.CASCADE,null=True)
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Trend', on_delete=models.CASCADE,null=True)
     user = models.CharField(max_length=10, blank=True, null=True)
     comment = models.CharField(max_length=100,null=True)
     

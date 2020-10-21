@@ -9,7 +9,7 @@ class TrendViewSet(viewsets.ModelViewSet):
 
 class TrendCommentViewSet(viewsets.ModelViewSet):
     queryset = TrendComment.objects.all()
-    serializer_Class = TrendCommentSerializer
+    serializer_class = TrendCommentSerializer
 
 #<---------------------------------------------->
 
