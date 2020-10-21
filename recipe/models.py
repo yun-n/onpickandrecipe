@@ -45,3 +45,47 @@ class Life(models.Model):
     life_content = models.CharField(max_length=500, null=True)
     life_video = models.FileField()
     ip = models.ForeignKey('ip', on_delete=models.CASCADE, null=True)
+
+#<------------------------------------------->
+
+class TrendComment(models.Model):
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Trend', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    
+
+class FoodComment(models.Model):
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Food', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    
+
+class StyleComment(models.Model):
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Style', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    
+
+class DietComment(models.Model):
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Diet', related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    
+
+class PetComment(models.Model):
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Pet', related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    
+
+class LifeComment(models.Model):
+    id = models.AutoField(primary_key=True)
+    recipe = models.ForeignKey('Life', related_name='comments', on_delete=models.CASCADE,null=True)
+    user = models.CharField(max_length=10, blank=True, null=True)
+    comment = models.CharField(max_length=100,null=True)
+    

@@ -1,6 +1,6 @@
 from rest_framework import viewsets,  generics
-from onpick.models import OnpickYoutube, Category
-from onpick.serializers import onpickview_serializers
+from onpick.models import OnpickYoutube, Category, Comment
+from onpick.serializers import onpickview_serializers 
 from django.shortcuts import get_object_or_404
 
 #onpick상세 생성
@@ -25,3 +25,5 @@ class OnpickviewList(generics.ListCreateAPIView):
 class OnpickviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = OnpickYoutube.objects.all()
     serializer_class = onpickview_serializers.OnpickviewSerializer
+
+

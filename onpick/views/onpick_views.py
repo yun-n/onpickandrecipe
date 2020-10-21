@@ -10,3 +10,4 @@ class OnpickList(generics.ListCreateAPIView):
 class OnpickDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = onpick_serializers.OnpickSerializer
+    
