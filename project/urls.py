@@ -19,7 +19,7 @@ from rest_framework import routers
 from recipe import views
 
 router = routers.DefaultRouter()
-router.register('trend', views.TrendViewSet)
+router.register('trend', views.TrendViewSet, basename='status')
 router.register('food', views.FoodViewSet)
 router.register('style', views.StyleViewSet)
 router.register('diet', views.DietViewSet)
